@@ -1,14 +1,25 @@
 import React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './components/home';
-import Joke from './components/joke';
+import Register from './components/Register';
+import Login from './components/Login';
+import News from './components/News';
+import Header from './components/Header';
+import './App.scss';
 
 const App = () => {
   return (
-    <Router>
-      <Route path="/" exact component={Home} />
-      <Route path="/joke" component={Joke} />
-    </Router>
+    <div>
+      <React.Fragment>
+        <Header />
+        <Routes>
+          <Route path="/" exact element={<Home/>} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/news" element={<News/>} />
+        </Routes>
+      </React.Fragment>
+    </div>
   );
 }
 
